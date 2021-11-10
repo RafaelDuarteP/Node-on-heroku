@@ -16,7 +16,7 @@ if (typeof process.env.DATABASE_URL === 'undefined') {
 }
 else {
     config = {
-        dialect: 'postgresql',
+        dialect: 'postgres',
         uri: process.env.DATABASE_URL
     }
 }
