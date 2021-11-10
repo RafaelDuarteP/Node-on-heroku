@@ -1,8 +1,12 @@
 let obj = {}
 
-if (process.env.DIALECT == 'postgres'){
+if (process.env.DIALECT == 'postgres') {
     obj = {
-        ssl: true}
+        ssl: {
+            require: true,
+            rejectUnauthorized: false // <<<<<<< YOU NEED THIS
+        }
+    }
 }
 
 module.exports = {
