@@ -2,9 +2,6 @@ const express = require('express')
 const path = require('path')
 const Pessoa = require('./db/models/Pessoa')
 const bodyParser = require("body-parser")
-const dotenv = require('dotenv')
-
-dotenv.config()
 
 const port = process.env.PORT || 3030
 const app = express()
@@ -25,8 +22,8 @@ app.post('/add/pessoa', async (req, res)=>{
     const pessoa = await Pessoa.create({
         nome: req.body.nome,
         nascimento: req.body.nascimento
-    }).catch((e)=>{
-        console.log(e)
+    }).catch((err)=>{
+        console.error(err)
     })
 
     console.log(pessoa)
