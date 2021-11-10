@@ -2,6 +2,9 @@ const express = require('express')
 const path = require('path')
 const Pessoa = require('./db/models/Pessoa')
 const bodyParser = require("body-parser")
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 const port = process.env.PORT || 3030
 const app = express()
