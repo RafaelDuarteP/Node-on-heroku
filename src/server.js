@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const Pessoa = require('./db/models/Pessoa')
+// const Pessoa = require('./db/models/Pessoa')
 const bodyParser = require("body-parser")
 
 const port = process.env.PORT || 3030
@@ -18,7 +18,7 @@ app.get('/index', (req, res)=>{
     res.render('index')
 })
 
-app.post('/add/pessoa', async (req, res)=>{
+/* app.post('/add/pessoa', async (req, res)=>{
     const pessoa = await Pessoa.create({
         nome: req.body.nome,
         nascimento: req.body.nascimento
@@ -29,9 +29,15 @@ app.post('/add/pessoa', async (req, res)=>{
     console.log(pessoa)
 
     res.render('pessoa', pessoa.dataValues)
-})
+}) */
 
 
 app.listen(port, ()=>{
     console.log('Server running on port ' + port)
+    console.log(process.env.DIALECT)
+    console.log(process.env.HOST)
+    console.log(process.env.DATABASE_PORT)
+    console.log(process.env.USER)
+    console.log(process.env.DATABASE_PASSWORD)
+    console.log(process.env.DATABASE)
 })
