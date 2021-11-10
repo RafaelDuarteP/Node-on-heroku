@@ -13,7 +13,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.get('/', (req, res)=>{
+app.get('/index', (req, res)=>{
     res.render('index')
 })
 
