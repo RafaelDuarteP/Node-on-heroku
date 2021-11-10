@@ -31,7 +31,7 @@ app.post('/add/pessoa', async (req, res)=>{
 
     console.log(pessoa)
 
-    res.render('pessoa', pessoa.dataValues)
+    res.render('pessoa', req.body)
 })
 
 

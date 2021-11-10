@@ -18,6 +18,6 @@ const Pessoa = db.sequelize.define('pessoa',{
     }
 })
 
-Pessoa.sync({alter: true})
+Pessoa.sync({force: true})
 
 module.exports = Pessoa
