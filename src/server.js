@@ -1,4 +1,5 @@
 const express = require('express')
+const pg = require('pg')
 const path = require('path')
 const Pessoa = require('./db/models/Pessoa')
 const bodyParser = require("body-parser")
@@ -6,6 +7,7 @@ const bodyParser = require("body-parser")
 const port = process.env.PORT || 3030
 const app = express()
 
+pg.defaults.ssl = true
 app.engine('html', require('ejs').renderFile)
 app.set('view engine', 'html')
 app.use(express.static('public'))
