@@ -14,6 +14,7 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/index', (req, res)=>{
+    console.log(process.env.DATABASE_URL)
     res.render('index')
 })
 
